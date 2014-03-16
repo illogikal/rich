@@ -1,9 +1,10 @@
 require 'cgi'
 require 'mime/types'
 require 'kaminari'
-require 'mongoid'
 module Rich
   class RichFile
+    include Mongoid::Document
+    include Mongoid::Timestamps
 
     scope :images, ->{ where(simplified_type: 'image')}
     scope :files, ->{ where(simplified_type: 'file')}
