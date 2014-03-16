@@ -4,6 +4,10 @@
 
 Presently, Rich integrates with Active Admin, Rails Admin and vanilla Formtastic (versions 1 and 2). Uploaded files can be stored on the filesystem, or on S3 (via Paperclips built-in S3 support).
 
+
+== Mongoid
+ This fork only supports Mongoid and works within RailsAdmin.
+
 == Goals
 
 1. Keep the CKEditor source out of your project.

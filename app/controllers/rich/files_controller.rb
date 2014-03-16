@@ -11,15 +11,15 @@ module Rich
 
       if(params[:scoped] == 'true')
         if(@type == "image")
-          @items = RichFile.images.order("created_at DESC").where("owner_type = ? AND owner_id = ?", params[:scope_type], params[:scope_id]).page params[:page]
+          @items = RichFile.images.desc(:created_at).where(owner_type: params[:scope_type]).where(owner_id: params[:scope_id]).page params[:page]
         else
-          @items = RichFile.files.order("created_at DESC").where("owner_type = ? AND owner_id = ?", params[:scope_type], params[:scope_id]).page params[:page]
+          @items = RichFile.files.desc(:created_at).where(owner_type: params[:scope_type]).where({owner_id: params[:scope_id]).page params[:page]
         end
       else
         if(@type == "image")
-          @items = RichFile.images.order("created_at DESC").page params[:page]
+          @items = RichFile.images.desc(:created_at).page params[:page]
         else
-          @items = RichFile.files.order("created_at DESC").page params[:page]
+          @items = RichFile.files.desc(:created_at).page params[:page]
         end
       end
 

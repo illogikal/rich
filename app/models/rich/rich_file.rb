@@ -1,12 +1,12 @@
 require 'cgi'
 require 'mime/types'
 require 'kaminari'
-
+require 'mongoid'
 module Rich
-  class RichFile < ActiveRecord::Base
+  class RichFile
 
-    scope :images,  lambda { where("rich_rich_files.simplified_type = 'image'") }
-    scope :files,   lambda { where("rich_rich_files.simplified_type = 'file'") }
+    scope :images, ->{ where(simplified_type: 'image')}
+    scope :files, ->{ where(simplified_type: 'file')}
 
     paginates_per Rich.options[:paginates_per]
   end
