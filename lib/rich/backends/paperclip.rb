@@ -7,13 +7,6 @@ module Rich
       include Mongoid::Document
       include Mongoid::Timestamps
       include Mongoid::Paperclip
-      
-      field :owner_type
-      field :owner_id
-      field :uri_cache
-      field :simplified_type
-      field :rich_file_file_name
-      field :rich_file_content_type
 
       included do
          has_mongoid_attached_file :rich_file,

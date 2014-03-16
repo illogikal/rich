@@ -6,6 +6,11 @@ module Rich
     include Mongoid::Document
     include Mongoid::Timestamps
 
+    field :owner_type
+    field :owner_id
+    field :uri_cache
+    field :simplified_type
+
     scope :images, ->{ where(simplified_type: 'image')}
     scope :files, ->{ where(simplified_type: 'file')}
 
