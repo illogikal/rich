@@ -5,6 +5,7 @@ module Rich
   class RichFile
     include Mongoid::Document
     include Mongoid::Timestamps
+    include Mongoid::Paperclip if Object.const_defined?(:Paperclip)
 
     field :owner_type
     field :owner_id

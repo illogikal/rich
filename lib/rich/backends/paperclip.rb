@@ -4,9 +4,6 @@ module Rich
   module Backends
     module Paperclip
       extend ActiveSupport::Concern
-      include Mongoid::Document
-      include Mongoid::Timestamps
-      include Mongoid::Paperclip
 
       included do
          has_mongoid_attached_file :rich_file,
