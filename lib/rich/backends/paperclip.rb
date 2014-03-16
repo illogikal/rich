@@ -17,7 +17,7 @@ module Rich
 
       included do
          has_mongoid_attached_file :rich_file,
-          :path => "assets/images/:id/:style.:extension",
+          :path => Rich.paperclip_path,
           :styles => Proc.new {|a| a.instance.set_styles },
           :convert_options => Proc.new { |a| Rich.convert_options[a] }
 

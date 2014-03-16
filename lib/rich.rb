@@ -51,6 +51,9 @@ module Rich
   mattr_accessor :backend
   @@backend = :paperclip
 
+  mattr_accessor :paperclip_path
+  @@paperclip_path = "assets/images/:id/:style.:extension"
+
   # configuration for picker
   mattr_accessor :placeholder_image
   @@placeholder_image = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" # a transparent pixel
