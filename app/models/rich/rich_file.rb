@@ -7,10 +7,14 @@ module Rich
     include Mongoid::Timestamps
     include Mongoid::Paperclip if Object.const_defined?(:Paperclip)
 
-    field :owner_type
-    field :owner_id
-    field :uri_cache
-    field :simplified_type
+    field :owner_type, type: String
+    field :owner_id, type: String
+    field :uri_cache, type: Text
+    field :simplified_type, type: String
+    field :rich_file_file_name, type: String
+    field :rich_file_content_type, type: String
+    field :rich_file_file_size, type: String
+    field :rich_file_updated_at, type: DateTime
 
     scope :images, ->{ where(simplified_type: 'image')}
     scope :files, ->{ where(simplified_type: 'file')}
