@@ -69,7 +69,7 @@ module Rich
                      :error => "Could not upload your file:\n- "+@file.errors.to_a[-1].to_s,
                      :params => params.inspect }
       end
-
+      puts response
       render :json => response, :content_type => "text/html"
     end
 
