@@ -11,7 +11,6 @@ module Rich
     field :owner_id, type: String
     field :uri_cache, type: String
     field :simplified_type, type: String
-    field :rich_file_file_name, type: String
     field :rich_file_content_type, type: String
     field :rich_file_file_size, type: String
     field :rich_file_updated_at, type: DateTime
